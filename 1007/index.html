@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表格 × 圖片練習</title>
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 2em;
+      color: #333;
+    }
+    .desc {
+      max-width: 600px;
+      margin: 16px auto 24px auto;
+      color: #555;
+      font-size: 1.1em;
+      line-height: 1.7;
+      background: #fffbe8;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 8px #eee;
+    }
+    .table-scroll {
+      overflow-x: auto;
+      max-width: 100vw;
+      margin: 0 auto;
+    }
+    table {
+      border-collapse: collapse;
+      min-width: 700px;
+      background: #fff;
+      margin: 0 auto 32px auto;
+      box-shadow: 0 2px 8px #ddd;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 1em;
+    }
+    th {
+      background: #e0eaff;
+      font-weight: bold;
+    }
+    caption {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #2a4d7a;
+    }
+    .section {
+      background: #eef;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #2a4d7a;
+    }
+    img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      display: block;
+      margin: 0 auto 6px auto;
+      border-radius: 6px;
+      box-shadow: 0 1px 6px #ccc;
+    }
+    small {
+      color: #666;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <caption>旅行相片一覽</caption>
+      <tr>
+        <th>分類</th>
+        <th>圖片</th>
+        <th>標題</th>
+        <th>日期</th>
+      </tr>
+      <tr>
+        <td rowspan="2">城市風景</td>
+        <td>
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=480&q=80" alt="傍晚的河岸與城市天際線倒影" width="480" height="320">
+        </td>
+        <td>河畔夕照<br><small>金色陽光灑在河面，倒映城市天際線。</small></td>
+        <td>2025-09-01</td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=480&q=80" alt="夜晚燈光點綴的街道與咖啡店" width="480" height="320">
+        </td>
+        <td>夜色小徑<br><small>街角咖啡店透出溫暖光暈。</small></td>
+        <td>2025-09-02</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="section">海邊旅行</td>
+      </tr>
+      <tr>
+        <td>自然風景</td>
+        <td>
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=480&q=80" alt="沙灘、海浪與遠方的帆船" width="480" height="320">
+        </td>
+        <td>清晨海浪<br><small>第一道陽光照亮浪花與沙粒。</small></td>
+        <td>2025-09-03</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
