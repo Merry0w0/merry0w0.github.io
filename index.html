@@ -1,119 +1,81 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>表格 × 圖片練習</title>
-  <style>
-    body {
-      font-family: "Microsoft JhengHei", Arial, sans-serif;
-      background: #f8f8f8;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      text-align: center;
-      margin-top: 32px;
-      font-size: 2em;
-      color: #333;
-    }
-    .desc {
-      max-width: 600px;
-      margin: 16px auto 24px auto;
-      color: #555;
-      font-size: 1.1em;
-      line-height: 1.7;
-      background: #fffbe8;
-      border-radius: 8px;
-      padding: 16px;
-      box-shadow: 0 2px 8px #eee;
-    }
-    .table-scroll {
-      overflow-x: auto;
-      max-width: 100vw;
-      margin: 0 auto;
-    }
-    table {
-      border-collapse: collapse;
-      min-width: 700px;
-      background: #fff;
-      margin: 0 auto 32px auto;
-      box-shadow: 0 2px 8px #ddd;
-    }
-    th, td {
-      border: 1px solid #bbb;
-      padding: 12px 8px;
-      text-align: center;
-      font-size: 1em;
-    }
-    th {
-      background: #e0eaff;
-      font-weight: bold;
-    }
-    caption {
-      font-size: 1.3em;
-      margin-bottom: 10px;
-      font-weight: bold;
-      color: #2a4d7a;
-    }
-    .section {
-      background: #eef;
-      font-weight: bold;
-      font-size: 1.1em;
-      color: #2a4d7a;
-    }
-    img {
-      width: 100%;
-      max-width: 480px;
-      height: auto;
-      display: block;
-      margin: 0 auto 6px auto;
-      border-radius: 6px;
-      box-shadow: 0 1px 6px #ccc;
-    }
-    small {
-      color: #666;
-      font-size: 0.95em;
-    }
-  </style>
+<html><head>
+<title>my Games</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
 </head>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="/w3images/avatar_g2.jpg" style="width:45%;" class="w3-round"><br><br>
+    <h4><b>PORTFOLIO</b></h4>
+    <p class="w3-text-grey">這個月最讓我印象深刻的時刻</p>
+    </div>
+  <div class="w3-panel w3-large">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
-  <div class="table-scroll">
-    <table>
-      <caption>旅行相片一覽</caption>
-      <tr>
-        <th>分類</th>
-        <th>圖片</th>
-        <th>標題</th>
-        <th>日期</th>
-      </tr>
-      <tr>
-        <td rowspan="2">城市風景</td>
-        <td>
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=480&q=80" alt="傍晚的河岸與城市天際線倒影" width="480" height="320">
-        </td>
-        <td>河畔夕照<br><small>金色陽光灑在河面，倒映城市天際線。</small></td>
-        <td>2025-09-01</td>
-      </tr>
-      <tr>
-        <td>
-          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=480&q=80" alt="夜晚燈光點綴的街道與咖啡店" width="480" height="320">
-        </td>
-        <td>夜色小徑<br><small>街角咖啡店透出溫暖光暈。</small></td>
-        <td>2025-09-02</td>
-      </tr>
-      <tr>
-        <td colspan="4" class="section">海邊旅行</td>
-      </tr>
-      <tr>
-        <td>自然風景</td>
-        <td>
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=480&q=80" alt="沙灘、海浪與遠方的帆船" width="480" height="320">
-        </td>
-        <td>清晨海浪<br><small>第一道陽光照亮浪花與沙粒。</small></td>
-        <td>2025-09-03</td>
-      </tr>
-    </table>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Photo Grid -->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="1.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Ado 2025 快閃店</b></p>
+        <p>太晚才去大部分商品都被賣完了...</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="2.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>鏈鋸人 蕾潔篇</b></p>
+        <p>這次劇場版的表現真的是超出預期，等了兩年還好沒有讓人失望~</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="4.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>WirForce 2025「全能電腦改造王」</b></p>
+        <p>去wirforce看到小潔帥到爛的Rog初音主機</p>
+      </div>
+    </div>
   </div>
-</body>
-</html>
+  
+  <!-- Images of Me -->
+  <div class="w3-row-padding w3-padding-16" id="about">
+    <div class="w3-col m6">
+      <img src="3.jpg" alt="Me" style="width:100%">
+    </div>
+    <div class="w3-col m6">
+      <img src="5.jpg" alt="Me" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <h4><b>About Me</b></h4>
+    <p>堅持不自律它本身就是一種自律</p>
+    <hr>
+    </div>
+
+    <!-- End page content -->
