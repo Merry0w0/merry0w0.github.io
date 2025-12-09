@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>期末個人網站</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #23272f;
+            color: #f8f9fa;
+        }
+        .navbar, footer {
+            background: #1a1d23 !important;
+        }
+        .navbar-brand, footer {
+            color: #f8f9fa !important;
+        }
+        header.bg-light {
+            background: linear-gradient(90deg, #3a3f51 0%, #23272f 100%);
+            color: #f8f9fa;
+        }
+        .card {
+            background: #2c3040;
+            border: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
+        .card-title {
+            color: #ffd700;
+        }
+        .card-text {
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 1100px;
+        }
+        .row.g-4 {
+            margin-top: 0;
+        }
+        @media (max-width: 768px) {
+            .display-4 {
+                font-size: 2.2rem;
+            }
+            .card-img-top {
+                height: 180px;
+                object-fit: cover;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">我的期末網站</a>
+        </div>
+    </nav>
+
+    <header class="bg-light py-5 text-center">
+        <div class="container">
+            <h1 class="display-4 mb-3">網頁設計課期末成果</h1>
+            <p class="lead mb-0">這裡統整了我這學期在網頁設計課所學到的內容</p>
+        </div>
+    </header>
+
+    <!-- 個人資料介紹欄 -->
+    <section class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card mb-4" style="background:#23272f; color:#ffd700; border-radius:1rem; box-shadow:0 2px 12px rgba(0,0,0,0.18);">
+                    <div class="card-body text-center">
+                        <img src="https://via.placeholder.com/120x120?text=Avatar" class="rounded-circle mb-3" alt="個人頭像" style="width:120px; height:120px; object-fit:cover; border:4px solid #ffd700;">
+                        <h3 class="mb-2" style="color:#ffd700;">黃榆傑</h3>
+                        <p class="mb-1" style="color:#e0e0e0;">北教大藝設系</p>
+                        <p class="mb-2" style="color:#e0e0e0;">熱愛網頁設計、前端技術，喜歡學習新知識與挑戰自我。</p>
+                        <div>
+                            <span class="badge bg-warning text-dark mx-1">HTML</span>
+                            <span class="badge bg-warning text-dark mx-1">CSS</span>
+                            <span class="badge bg-warning text-dark mx-1">Bootstrap</span>
+                            <span class="badge bg-warning text-dark mx-1">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/400x250?text=HTML+CSS" class="card-img-top" alt="HTML CSS">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML & CSS</h5>
+                        <p class="card-text">學會了HTML結構與CSS樣式設計，能夠製作基本的網頁版面。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/400x250?text=Bootstrap" class="card-img-top" alt="Bootstrap">
+                    <div class="card-body">
+                        <h5 class="card-title">Bootstrap</h5>
+                        <p class="card-text">學習使用Bootstrap框架，快速建立響應式網頁和美觀的元件。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/400x250?text=JavaScript" class="card-img-top" alt="JavaScript">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript</h5>
+                        <p class="card-text">初步認識JavaScript，能夠為網頁加入互動效果。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-white text-center py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-2 mb-md-0">
+                    <h6 class="text-warning">聯絡方式</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li>Email: <a href="mailto:yourmail@example.com" class="text-white">yourmail@example.com</a></li>
+                        <li>電話: 0912-345678</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-2 mb-md-0">
+                    <h6 class="text-warning">社群連結</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-white">Facebook</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                        <li><a href="#" class="text-white">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-warning">網站資訊</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li>設計者：黃榆傑</li>
+                        <li>版權所有 &copy; 2024</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
