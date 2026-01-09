@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的網站</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* 強制設定卡片尺寸 */
+        .custom-card {
+            width: 421.33px;
+            height: 377.2px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto; /* 確保卡片在格子內置中 */
+        }
+
+        /* 調整圖片比例，確保佔據固定高度 */
+        .custom-card .card-img-top {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        /* 讓卡片主體填滿剩餘空間並對齊內容 */
+        .custom-card .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* 響應式調整：小螢幕時寬度改為自動 */
+        @media (max-width: 450px) {
+            .custom-card {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="py-3 mb-4 border-bottom">
+        <div class="container d-flex flex-wrap align-items-center">
+            <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 link-body-emphasis text-decoration-none">
+                <span class="fs-4">旅遊導覽網</span>
+            </a>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 ms-auto" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            </form>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">導覽</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">精選行程</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Banner 2">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                
+                <div class="col">
+                    <div class="card shadow-sm custom-card">
+                        <img src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?q=80&w=500&auto=format&fit=crop" class="card-img-top" alt="冰島">
+                        <div class="card-body">
+                            <h5 class="card-title">冰島 - 雷克雅維克</h5>
+                            <p class="card-text">追逐神祕的北極光，探索壯闊的冰川與瀑布。冰島以其純淨的自然景觀聞名，是冒險家的夢幻國度。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">查看詳情</button>
+                                <small class="text-body-secondary">冒險</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm custom-card">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=500&auto=format&fit=crop" class="card-img-top" alt="法國">
+                        <div class="card-body">
+                            <h5 class="card-title">法國 - 巴黎</h5>
+                            <p class="card-text">浪漫之都巴黎，不僅有艾菲爾鐵塔和羅浮宮，更有充滿藝術氣息的街道與精緻的法式甜點。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">查看詳情</button>
+                                <small class="text-body-secondary">經典</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm custom-card">
+                        <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=500&auto=format&fit=crop" class="card-img-top" alt="瑞士">
+                        <div class="card-body">
+                            <h5 class="card-title">瑞士 - 阿爾卑斯山</h5>
+                            <p class="card-text">在阿爾卑斯山的懷抱中呼吸純淨空氣。瑞士擁有世界級的雪場與湖光山色，是療癒身心的首選。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">查看詳情</button>
+                                <small class="text-body-secondary">自然</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm custom-card">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=500&auto=format&fit=crop" class="card-img-top" alt="日本">
+                        <div class="card-body">
+                            <h5 class="card-title">日本 - 東京</h5>
+                            <p class="card-text">在東京的霓虹燈下感受現代與傳統的融合。從古老神社到摩天大樓，東京是文化交織的國際大都市。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">查看詳情</button>
+                                <small class="text-body-secondary">熱門</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm custom-card">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=500&auto=format&fit=crop" class="card-img-top" alt="英國">
+                        <div class="card-body">
+                            <h5 class="card-title">英國 - 倫敦</h5>
+                            <p class="card-text">倫敦擁有豐富歷史與文化，從大本鐘到白金漢宮，每一處建築都散發著英倫古典魅力。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">查看詳情</button>
+                                <small class="text-body-secondary">優雅</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm custom-card">
+                        <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=500&auto=format&fit=crop" class="card-img-top" alt="義大利">
+                        <div class="card-body">
+                            <h5 class="card-title">義大利 - 威尼斯</h5>
+                            <p class="card-text">漫步於蜿蜒的水巷，乘坐貢多拉感受威尼斯的魅力。這裡是文藝復興藝術與歷史的殿堂。</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">查看詳情</button>
+                                <small class="text-body-secondary">浪漫</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> </div> </div> </body>
+</html>
