@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>期末感言 | 跑馬燈設計</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;700&display=swap');
+
+        body {
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        /* 標題設計：金屬漸層 + 閃爍動畫 */
+        .page-title {
+            position: fixed;
+            top: 15%;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(to bottom, #fff7ad 0%, #ffa700 50%, #ff5e00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 15px;
+            filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.4));
+            z-index: 10;
+        }
+
+        /* 跑馬燈容器：增加兩側漸隱效果 */
+        .marquee-container {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+
+        /* 跑馬燈文字：加上發光描邊與間距 */
+        .marquee-text {
+            display: inline-block;
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            padding-left: 100%;
+            animation: scroll-text 45s linear infinite;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .paused { animation-play-state: paused !important; }
+
+        @keyframes scroll-text {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* 狀態提示與按鈕 */
+        #status-icon {
+            position: fixed;
+            bottom: 15%;
+            font-size: 0.9rem;
+            color: #444;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .back-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 40px;
+            color: #888;
+            text-decoration: none;
+            border: 1px solid #444;
+            padding: 8px 20px;
+            border-radius: 2px;
+            transition: all 0.5s;
+        }
+        .back-btn:hover {
+            color: #fff;
+            border-color: #fff;
+            background: rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-title">期末心得感想</div>
+
+    <div class="marquee-container" id="container">
+        <div class="marquee-text" id="content">
+            這學期的網頁設計課讓我從一個「網頁瀏覽者」轉變為「創作者」。 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            在最初的「黃金主題網頁」開發過程中，我學會了如何透過 CSS 精細調整視覺質感，讓原本生硬的背景在加入放射漸層與毛玻璃效果 rgba 後，展現出了設計的深度，這讓我體會到前端工程師在美學與代碼間的平衡點。 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            而在我「六國旅遊導覽網」的實作中，我接觸到了業界主流的 Bootstrap 5 框架，我學會了如何不再糾結於瑣碎的佈局細節，而是利用網格系統快速建構出穩定且專業的頁面，特別是在解決「圖片裁切不一」與「手機版跑版」的問題時，我掌握了 object-fit 與媒體查詢的技術，這讓我寫出的程式碼更具彈性。 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            最深刻的體悟是，一個好的網頁不只是「好看」，更要「好操作」。當我成功將兩個獨立的檔案連結在一起，完成一個具備首頁與分頁的網站雛型時，我感受到了建構數位空間的成就感。
+        </div>
+    </div>
+
+    <div id="status-icon">Press [Space] to Pause / Play</div>
+    <a href="javascript:history.back()" class="back-btn">RETURN</a>
+
+    <script>
+        const content = document.getElementById('content');
+        const statusIcon = document.getElementById('status-icon');
+        let isPaused = false;
+
+        function togglePause() {
+            isPaused = !isPaused;
+            content.classList.toggle('paused', isPaused);
+            statusIcon.innerHTML = isPaused ? "Paused (Space to Resume)" : "Playing (Space to Pause)";
+            statusIcon.style.color = isPaused ? "#ffa700" : "#444";
+        }
+
+        window.addEventListener('keydown', (e) => { if(e.code === 'Space') { e.preventDefault(); togglePause(); } });
+        document.getElementById('container').addEventListener('click', togglePause);
+    </script>
+</body>
+</html>
