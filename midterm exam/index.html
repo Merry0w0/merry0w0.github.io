@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <title>台灣旅遊 - Taiwan Travel Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body,h1,h2,h3,h4,h5,h6 {
+            font-family: "Raleway", sans-serif
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .w3-sidenav a,.w3-sidenav h4 {
+            padding: 12px
+        }
+        
+        .w3-bar a,.w3-bar h1,.w3-bar h2,.w3-bar h3,.w3-bar h4,.w3-bar h5,.w3-bar h6 {
+            padding: 8px
+        }
+        
+        /* 改善卡片外觀 */
+        .w3-card-4 {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .w3-card-4:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        /* 改善主容器 */
+        .w3-main {
+            background-color: #f5f5f5;
+            width: 100%;
+            max-width: 1000px;
+            padding: 0;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+        
+        .w3-container {
+            padding: 24px !important;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* 居中對齊 */
+        .w3-center {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* 改善標籤佈局 */
+        .w3-tag {
+            display: inline-block;
+            margin: 4px;
+            padding: 6px 12px !important;
+            border-radius: 4px;
+        }
+        
+        /* 改善頁面間距 */
+        header {
+            background-color: white;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        /* 改善圖片間距 */
+        img {
+            display: block;
+        }
+        
+        /* 改善頁腳 */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        footer p {
+            margin: 8px 0;
+        }
+        
+        /* 頂部框動畫 */
+        .w3-top {
+            transition: margin-left 0.3s ease;
+            margin-left: 0;
+            width: 100%;
+            display: flex !important;
+            justify-content: center !important;
+        }
+        
+        .w3-top.shifted {
+            margin-left: 250px;
+        }
+    </style>
+</head>
+<body style="max-width:100%">
+
+<!-- Sidenav (hidden by default) -->
+<nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:250px;" id="mySidenav">
+    <div style="padding: 16px; text-align: center;">
+        <button class="w3-button w3-large" style="width: 100%; text-align: right; padding: 0;" onclick="w3_close()">✕</button>
+    </div>
+    <h4 class="w3-bar-item w3-center"><b>台灣旅遊</b></h4>
+    <hr style="margin: 8px 0;">
+    <a class="w3-bar-item w3-button w3-center" href="#" onclick="goToTop(); w3_close();">⬆️ 回到頂部</a>
+    <a class="w3-bar-item w3-button w3-center" href="#" onclick="showPage(1); w3_close();">📄 首頁</a>
+    <a class="w3-bar-item w3-button w3-center" href="#" onclick="showPage(2); w3_close();">📄 第2頁</a>
+    <a class="w3-bar-item w3-button w3-center" href="#" onclick="showPage(3); w3_close();">📄 第3頁</a>
+    <a class="w3-bar-item w3-button w3-center" href="#" onclick="goToBottom(); w3_close();">⬇️ 回到底部</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top" id="topMenu" id="pageTop">
+    <div class="w3-white" style="width: 100%; max-width: 1000px;">
+        <div class="w3-center w3-padding-16"><h1><b>台灣旅遊部落格</b></h1></div>
+        <div class="w3-opennav w3-left w3-padding-16" style="position: fixed; left: 0; top: 0; width:50px;font-weight:bold; z-index: 4;" onclick="w3_open()">☰</div>
+    </div>
+</div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-top:110px;">
+
+    <!-- Push down content on small screens -->
+    <div class="w3-hide-large" style="margin-top:83px"></div>
+
+    <!-- Top header -->
+    <header class="w3-container w3-xlarge w3-padding-32 w3-center">
+        <h1><b>歡迎來到台灣</b></h1>
+        <p><span class="w3-tag">探索台灣的美麗山川與特色文化</span></p>
+    </header>
+
+    <!-- Page 1 Blog entries -->
+    <div id="page1-content">
+    <div class="w3-card-4 w3-margin w3-white">
+        <img src="pic_1.jpg" alt="Jiufen" style="width:100%;height:300px;object-fit:cover;">
+        <div class="w3-container">
+            <h3><b>九份老街</b></h3>
+            <h5><span class="w3-opacity">懷舊與美食的天堂</span></h5>
+            <hr style="margin: 12px 0;">
+        </div>
+        <div class="w3-container">
+            <p>九份老街位於新北市，以其傳統建築、紅燈籠和狹窄的街道而聞名。這裡的芋圓、茶葉蛋和各式小吃吸引了無數遊客。夜幕降臨時，紅燈籠亮起，整條街道沉浸在溫暖的光芒中，彷彿回到了日治時代的繁華時光。</p>
+            <div style="margin-top: 12px;">
+                <span class="w3-tag w3-light-grey">新北市</span>
+                <span class="w3-tag w3-light-grey">山城</span>
+                <span class="w3-tag w3-light-grey">美食</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-card-4 w3-margin w3-white">
+        <img src="pic_3.jpg" alt="Sun Moon Lake" style="width:100%;height:300px;object-fit:cover;">
+        <div class="w3-container">
+            <h3><b>日月潭</b></h3>
+            <h5><span class="w3-opacity">台灣最美麗的山中明珠</span></h5>
+            <hr style="margin: 12px 0;">
+        </div>
+        <div class="w3-container">
+            <p>日月潭位於南投縣，是台灣最大的天然淡水湖泊。湖畔環繞著翠綠的山脈，湖水清澈如鏡。單車環湖是最受歡迎的遊玩方式，沿途可欣賞各式景觀，包括文武廟、慈恩塔等著名景點。春天時湖邊櫻花盛開，是最佳遊覽時節。</p>
+            <div style="margin-top: 12px;">
+                <span class="w3-tag w3-light-grey">南投</span>
+                <span class="w3-tag w3-light-grey">湖景</span>
+                <span class="w3-tag w3-light-grey">單車</span>
+                <span class="w3-tag w3-light-grey">自然</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-card-4 w3-margin w3-white">
+        <img src="pic_2.jpg" alt="Taipei 101" style="width:100%;height:300px;object-fit:cover;">
+        <div class="w3-container">
+            <h3><b>台北 101</b></h3>
+            <h5><span class="w3-opacity">俯瞰台北的壯觀視野</span></h5>
+            <hr style="margin: 12px 0;">
+        </div>
+        <div class="w3-container">
+            <p>台北 101 是台灣的象徵性建築，曾經是世界最高的建築之一。搭乘高速電梯前往觀景台，只需 37 秒就能到達 388 公尺高的位置。在晴朗的日子，可以看到整個台北盆地的壯闊景色。入夜後，101 的光雕秀更是迷人，是遊客必遊的景點。</p>
+            <div style="margin-top: 12px;">
+                <span class="w3-tag w3-light-grey">台北</span>
+                <span class="w3-tag w3-light-grey">建築</span>
+                <span class="w3-tag w3-light-grey">景觀</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-card-4 w3-margin w3-white">
+        <img src="pic_8.jpg" alt="Kenting Beach" style="width:100%;height:300px;object-fit:cover;">
+        <div class="w3-container">
+            <h3><b>墾丁國家公園</b></h3>
+            <h5><span class="w3-opacity">國境之南的碧海青天</span></h5>
+            <hr style="margin: 12px 0;">
+        </div>
+        <div class="w3-container">
+            <p>墾從鵝鑾鼻燈塔的純白身影到龍磐大草原的斷崖海景，每一處都展現了大自然的鬼斧神工。</p>
+            <div style="margin-top: 12px;">
+                <span class="w3-tag w3-light-grey">屏東</span>
+                <span class="w3-tag w3-light-grey">海灘</span>
+                <span class="w3-tag w3-light-grey">水上運動</span>
+                <span class="w3-tag w3-light-grey">度假</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-card-4 w3-margin w3-white">
+        <img src="pic_7.jpg" alt="Alishan" style="width:100%;height:300px;object-fit:cover;">
+        <div class="w3-container">
+            <h3><b>阿里山</b></h3>
+            <h5><span class="w3-opacity">雲端上的仙境</span></h5>
+            <hr style="margin: 12px 0;">
+        </div>
+        <div class="w3-container">
+            <p>阿里山位於嘉義縣，是台灣最著名的山景景點之一。搭乘日本時代遺留的阿里山森林鐵路登上山頂，沿途可欣賞茶園和檜木林。山頂的日出壯觀無比，被譽為「阿里山五奇」之一。此外，樹齡超過 2000 年的神木更是必看景點，充滿靈性和歷史意義。</p>
+            <div style="margin-top: 12px;">
+                <span class="w3-tag w3-light-grey">嘉義</span>
+                <span class="w3-tag w3-light-grey">山景</span>
+                <span class="w3-tag w3-light-grey">日出</span>
+                <span class="w3-tag w3-light-grey">鐵路</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-card-4 w3-margin w3-white">
+        <img src="pic_18.jpg" alt="Taiwan Food" style="width:100%;height:300px;object-fit:cover;">
+        <div class="w3-container">
+            <h3><b>七星潭</b></h3>
+            <h5><span class="w3-opacity">湛藍月牙下的礫石樂章</span></h5>
+            <hr style="margin: 12px 0;">
+        </div>
+        <div class="w3-container">
+            <p>這片迷人的月牙形海灣以湛藍深邃的太平洋海水與獨特的礫石灘聞名。這裡沒有細沙，取而代之的是圓潤透亮的青石與麥飯石，在浪潮拍打下發出清脆治癒的碰撞聲。漫步在海岸線上，遠方的清水斷崖與層疊的山巒交織成一幅絕美的山海畫卷。</p>
+            <div style="margin-top: 12px;">
+                <span class="w3-tag w3-light-grey">花蓮</span>
+                <span class="w3-tag w3-light-grey">景觀</span>
+                <span class="w3-tag w3-light-grey">海灘</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Page 2 Blog entries -->
+    <div id="page2-attractions" style="display: none;">
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_14.jpg" alt="Yangmingshan" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>陽明山</b></h3>
+                <h5><span class="w3-opacity">台北後花園</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>陽明山位於台北市北邊，是著名的溫泉勝地與郊遊地點。山上有著名的火山地形、溫泉和茶園，春季時杜鵑花盛開，吸引遊客登臨。登上山頂可俯瞰整個台北盆地，夜晚時燈火璀璨，景色壯觀。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">台北</span>
+                    <span class="w3-tag w3-light-grey">溫泉</span>
+                    <span class="w3-tag w3-light-grey">山景</span>
+                    <span class="w3-tag w3-light-grey">賞花</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_13.jpg" alt="Taroko" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>太魯閣峽谷</b></h3>
+                <h5><span class="w3-opacity">壯麗的自然奇景</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>太魯閣峽谷位於花蓮縣，是台灣最著名的自然景觀之一。大理石峽谷高聳入雲，溪流清澈見底。沿著步道行走，可欣賞到鬼斧神工的地形、瀑布和奇石。是登山愛好者和攝影師的必遊之地。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">花蓮</span>
+                    <span class="w3-tag w3-light-grey">峽谷</span>
+                    <span class="w3-tag w3-light-grey">登山</span>
+                    <span class="w3-tag w3-light-grey">攝影</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_15.jpg" alt="Pingxi" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>平溪天燈節</b></h3>
+                <h5><span class="w3-opacity">放飛祝福與夢想</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>平溪天燈節是台灣最具特色的民俗活動之一，每年農曆正月十五舉辦。千盞天燈同時升空，絢麗壯觀，象徵著對新年的美好祝願。除了天燈節，平溪古鎮本身也充滿懷舊風情，是放鬆身心的好去處。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">新北市</span>
+                    <span class="w3-tag w3-light-grey">民俗活動</span>
+                    <span class="w3-tag w3-light-grey">節慶</span>
+                    <span class="w3-tag w3-light-grey">古鎮</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_16.jpg" alt="Keelung" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>基隆廟口夜市</b></h3>
+                <h5><span class="w3-opacity">台灣最知名的夜市美食天堂</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>基隆廟口夜市是台灣著名的夜市之一，以其豐富的海鮮和特色小吃而聞名。鼎邊銼、天婦羅、螺肉麵線等都是必吃美食。夜市內人氣爆棚，是品嚐台灣道地美食的最佳地點。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">基隆</span>
+                    <span class="w3-tag w3-light-grey">夜市</span>
+                    <span class="w3-tag w3-light-grey">海鮮</span>
+                    <span class="w3-tag w3-light-grey">美食</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_17.jpg" alt="Beitou" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>北投溫泉</b></h3>
+                <h5><span class="w3-opacity">享受療癒溫泉浴</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>北投位於台北市北邊，擁有豐富的溫泉資源。這裡有許多溫泉飯店和公共溫泉浴場，遊客可以在山水環繞的環境中放鬆身心。北投溫泉博物館和地熱谷也是著名景點，值得一遊。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">台北</span>
+                    <span class="w3-tag w3-light-grey">溫泉</span>
+                    <span class="w3-tag w3-light-grey">度假</span>
+                    <span class="w3-tag w3-light-grey">療癒</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_4.jpg" alt="Lanyu" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>蘭嶼</b></h3>
+                <h5><span class="w3-opacity">寶島中的寶島</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>蘭嶼是台灣離島中的明珠，以其獨特的達悟族文化和原始海島風光而聞名。島上有美麗的沙灘、清澈的海水和傳統的拼板舟。登山、浮潛和文化體驗都是蘭嶼的特色活動。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">台東</span>
+                    <span class="w3-tag w3-light-grey">離島</span>
+                    <span class="w3-tag w3-light-grey">文化</span>
+                    <span class="w3-tag w3-light-grey">海邊</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3 Blog entries -->
+    <div id="page3-attractions" style="display: none;">
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_5.jpg" alt="Qingjing" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>清境農場</b></h3>
+                <h5><span class="w3-opacity">高山上的綠色牧場</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>清境農場位於南投縣海拔 1700 多米的高山上，是台灣最高的觀光牧場。農場內綠草如茵，羊群成群，景色如詩如畫。這裡也是看雲海的最佳地點，尤其是清晨時分。農場內有許多體驗活動和餐飲選擇。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">南投</span>
+                    <span class="w3-tag w3-light-grey">牧場</span>
+                    <span class="w3-tag w3-light-grey">高山</span>
+                    <span class="w3-tag w3-light-grey">雲海</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_6.jpg" alt="Jiufen" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>高雄駁二藝術特區</b></h3>
+                <h5><span class="w3-opacity">創意藝術與工業風格的結合</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>駁二藝術特區是高雄最具藝術氣息的地點，由廢棄的碼頭倉庫改造而成。這裡定期舉辦藝術展覽、音樂會和創意活動，吸引了許多藝術愛好者。漫步其間，可欣賞到街頭藝術和建築設計，是文創愛好者的必遊之地。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">高雄</span>
+                    <span class="w3-tag w3-light-grey">藝術</span>
+                    <span class="w3-tag w3-light-grey">文創</span>
+                    <span class="w3-tag w3-light-grey">展覽</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_10.jpg" alt="Tainan" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>安平古堡</b></h3>
+                <h5><span class="w3-opacity">從瞭望台俯瞰，可以將安平港的美景盡收眼底</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>這裡曾是荷蘭人修築的「熱蘭遮城」，承載著台灣四百年的歷史重量。漫步在古老的紅磚牆與老榕樹交錯的遺址間，感受歲月刻下的滄桑痕跡。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">台南</span>
+                    <span class="w3-tag w3-light-grey">古蹟</span>
+                    <span class="w3-tag w3-light-grey">歷史</span>
+                    <span class="w3-tag w3-light-grey">文化</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_9.jpg" alt="Liuqiu" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>小琉球</b></h3>
+                <h5><span class="w3-opacity">離島浮潛的天堂</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>小琉球是屏東縣最南端的離島，以其清澈的海水和豐富的海洋生物而聞名。這裡是浮潛和潛水的熱門地點，遊客可以在海中與海龜同游。島上也有美麗的沙灘和特色小吃，是度假的理想選擇。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">屏東</span>
+                    <span class="w3-tag w3-light-grey">離島</span>
+                    <span class="w3-tag w3-light-grey">浮潛</span>
+                    <span class="w3-tag w3-light-grey">度假</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_12.jpg" alt="Chiayi" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>新港奉天宮</b></h3>
+                <h5><span class="w3-opacity">台灣信仰中心的朝聖地</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>新港奉天宮位於嘉義縣，是台灣最知名的媽祖廟，香火鼎盛。每年農曆正月十五的媽祖遶境活動吸引了數百萬信徒。廟宇建築雄偉壯觀，是台灣民俗信仰的重要象徵。周邊還有老街和美食小吃，值得一遊。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">嘉義</span>
+                    <span class="w3-tag w3-light-grey">廟宇</span>
+                    <span class="w3-tag w3-light-grey">信仰</span>
+                    <span class="w3-tag w3-light-grey">民俗</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin w3-white">
+            <img src="pic_11.jpg" alt="Taichung" style="width:100%;height:300px;object-fit:cover;">
+            <div class="w3-container">
+                <h3><b>台中高美濕地</b></h3>
+                <h5><span class="w3-opacity">西海岸最美的夕陽景點</span></h5>
+                <hr style="margin: 12px 0;">
+            </div>
+            <div class="w3-container">
+                <p>高美濕地位於台中海邊，是台灣最美的濕地之一。廣闊的潮間帶布滿了奇特的地形，夕陽時分景色最為迷人。這裡也是觀鳥的好地點，可欣賞到許多水鳥。走在木棧道上，感受大自然的魅力。</p>
+                <div style="margin-top: 12px;">
+                    <span class="w3-tag w3-light-grey">台中</span>
+                    <span class="w3-tag w3-light-grey">濕地</span>
+                    <span class="w3-tag w3-light-grey">夕陽</span>
+                    <span class="w3-tag w3-light-grey">自然</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-center w3-padding-32">
+        <div class="w3-bar">
+            <a href="#page1" class="w3-bar-item w3-button w3-hover-black" onclick="showPage(1)">«</a>
+            <a href="#page1" class="w3-bar-item w3-black w3-button" id="page1-btn" onclick="showPage(1)">1</a>
+            <a href="#page2" class="w3-bar-item w3-button w3-hover-black" id="page2-btn" onclick="showPage(2)">2</a>
+            <a href="#page3" class="w3-bar-item w3-button w3-hover-black" id="page3-btn" onclick="showPage(3)">3</a>
+            <a href="#page3" class="w3-bar-item w3-button w3-hover-black" onclick="showPage(3)">»</a>
+        </div>
+    </div>
+
+    <!-- Page 2 Content -->
+    <div id="page2-content" style="display: none;">
+        <header class="w3-container w3-xlarge w3-padding-32 w3-center w3-white" style="margin-top: 20px;">
+            <h1><b>台灣旅遊完整指南</b></h1>
+            <p><span class="w3-tag">探索台灣必去的熱門景點與深度旅遊體驗</span></p>
+        </header>
+
+        <div class="w3-container w3-white" style="margin-top: 20px;">
+            <h3><b>🗺️ 台灣旅遊地區介紹</b></h3>
+            <hr style="margin: 16px 0;">
+            
+            <h4><b>北部地區</b></h4>
+            <p>台北是台灣的首都和經濟中心，擁有世界級的建築和美食。從台北 101 的壯觀景觀到九份老街的懷舊風情，北部提供了都市和傳統文化的完美結合。此外，基隆、新竹等地也各具特色，提供海邊度假、科技園區和客家文化體驗。</p>
+
+            <h4><b>中部地區</b></h4>
+            <p>中部地區以其壯麗的山景和傳統文化聞名。日月潭是台灣最大的淡水湖，湖光山色美不勝收。阿里山以其千年神木和日出景觀吸引遊客，而合歡山則是台灣最高的公路終點，冬季時甚至可能看到雪景。</p>
+
+            <h4><b>南部地區</b></h4>
+            <p>南部以其溫暖的氣候和海灘度假著稱。墾丁是台灣最南端的度假勝地，擁有長達 88 公里的海岸線，是進行水上運動的理想地點。高雄的藝術文化氛圍和台南的古蹟文化也吸引了許多遊客。</p>
+
+            <h4><b>東部地區</b></h4>
+            <p>東部地區以其原始自然景觀而著稱。花蓮的太魯閣峽谷是台灣最壯麗的自然奇景，台東的蘭嶼提供了獨特的離島文化體驗。東部的海灘也很適合衝浪和其他水上活動。</p>
+
+            <h4><b>離島地區</b></h4>
+            <p>澎湖和蘭嶼等離島提供了獨特的度假體驗。澎湖以其清澈的海水和美麗的沙灘聞名，是進行水上運動和海鮮美食體驗的理想地點。蘭嶼則保留了達悟族的傳統文化和原始自然風光。</p>
+
+            <hr style="margin: 24px 0;">
+
+            <h3><b>🎒 旅遊提示</b></h3>
+            <ul style="line-height: 2;">
+                <li><b>最佳旅遊季節：</b>春季（3-5月）和秋季（9-11月）是造訪台灣的最佳時間，氣候宜人，不過冬季（12-2月）也適合度假。</li>
+                <li><b>交通方式：</b>台灣有發達的公共交通系統，包括高鐵、台鐵、公車和捷運。租車或購買交通卡可方便遊覽。</li>
+                <li><b>美食文化：</b>不要錯過台灣的夜市美食、小吃和傳統菜餚。每個地方都有獨特的特色美食。</li>
+                <li><b>文化體驗：</b>參訪廟宇、古蹟和民俗文化活動，深入了解台灣的傳統文化和歷史。</li>
+                <li><b>住宿選擇：</b>從豪華飯店到民宿應有盡有，選擇依預算和喜好而定。</li>
+                <li><b>天氣準備：</b>台灣颱風季在夏季，帶上防曬和雨具，登山時準備合適的裝備。</li>
+            </ul>
+
+            <hr style="margin: 24px 0;">
+
+            <h3><b>💰 旅遊成本參考</b></h3>
+            <p>台灣旅遊的成本相對較為經濟實惠。一天的預算大約為：</p>
+            <ul style="line-height: 2;">
+                <li>經濟旅遊：500-800 RMB（住宿、食物、交通）</li>
+                <li>中等旅遊：800-1500 RMB（較舒適的住宿和更多景點）</li>
+                <li>豪華旅遊：1500+ RMB（高級飯店和完全體驗）</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Blog entries in 3 columns -->
+    <hr id="about">
+    <div class="w3-row">
+        <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="w3-card-4 w3-white">
+                <img src="19.jpg" alt="Yangmingshan" style="width:100%;height:200px;object-fit:cover;">
+                <div class="w3-container">
+                    <h5>珍珠奶茶</h5>
+                    <p>風靡全球的台灣國民靈魂</p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="w3-card-4 w3-white">
+                <img src="20.jpg" alt="Taroko" style="width:100%;height:200px;object-fit:cover;">
+                <div class="w3-container">
+                    <h5>臭豆腐</h5>
+                    <p>越臭越香的庶民美食經典</p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col l4 m6 w3-margin-bottom">
+            <div class="w3-card-4 w3-white">
+                <img src="21.jpg" alt="Pingxi" style="width:100%;height:200px;object-fit:cover;">
+                <div class="w3-container">
+                    <h5>牛肉麵</h5>
+                    <p>匯聚匠心的台灣國民料理</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Labels / tags -->
+    <div class="w3-container w3-white" style="margin-top: 40px;">
+        <h4><b>🏷️ 熱門標籤</b></h4>
+        <hr style="margin: 16px 0;">
+        <div style="line-height: 2.4;">
+            <span class="w3-tag w3-light-blue w3-large">旅遊</span>
+            <span class="w3-tag w3-light-green w3-large">台北</span>
+            <span class="w3-tag w3-light-red w3-large">南部</span>
+            <span class="w3-tag w3-light-gray w3-large">中部</span>
+            <span class="w3-tag w3-light-blue w3-large">海邊</span>
+            <span class="w3-tag w3-light-green w3-large">山景</span>
+            <span class="w3-tag w3-light-red w3-large">美食</span>
+            <span class="w3-tag w3-light-gray w3-large">特色小吃</span>
+            <span class="w3-tag w3-light-blue w3-large">溫泉</span>
+            <span class="w3-tag w3-light-green w3-large">文化</span>
+            <span class="w3-tag w3-light-red w3-large">探險</span>
+            <span class="w3-tag w3-light-gray w3-large">度假</span>
+        </div>
+    </div>
+
+    <!-- About -->
+    <div class="w3-container w3-white" style="margin-top: 40px; text-align: center;">
+        <h4 id="about"><b>👋關於本部落格</b></h4>
+        <hr style="margin: 16px 0;">
+        <div style="max-width: 400px; margin: 0 auto;">
+            <h5><b>發現台灣之美！</b></h5>
+            <h6 style="margin: 8px 0;"><span class="w3-opacity">旅遊愛好者與台灣文化推廣者</span></h6>
+            <p style="margin-top: 16px; line-height: 1.8;">歡迎來到我的台灣旅遊部落格！我致力於分享台灣各地的美景、美食和文化。無論你是第一次來台灣，還是已經是台灣迷，這裡都有許多值得探索的內容。我們一起發現這座寶島的無窮魅力，體驗台灣人的熱情款待與深厚的文化底蘊。</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top" id="pageBottom">
+        <p>台灣旅遊部落格 © 2026. 所有內容版權所有。</p>
+        <p>由 <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">W3.CSS</a> 提供支持</p>
+    </footer>
+
+</div>
+
+<script>
+    function w3_open() {
+        document.getElementById("mySidenav").style.display = "block";
+        document.getElementById("topMenu").classList.add("shifted");
+    }
+
+    function w3_close() {
+        document.getElementById("mySidenav").style.display = "none";
+        document.getElementById("topMenu").classList.remove("shifted");
+    }
+
+    function showPage(pageNum) {
+        // 獲取頁面元素
+        const page1Content = document.getElementById("page1-content");
+        const page2Attractions = document.getElementById("page2-attractions");
+        const page2MainContent = document.getElementById("page2-content");
+        const page3Attractions = document.getElementById("page3-attractions");
+        
+        // 更新按鈕樣式
+        document.getElementById("page1-btn").classList.remove("w3-black");
+        document.getElementById("page2-btn").classList.remove("w3-black");
+        document.getElementById("page3-btn").classList.remove("w3-black");
+        
+        if (pageNum === 1) {
+            // 第1頁：顯示第1頁景點
+            if (page1Content) page1Content.style.display = "block";
+            if (page2Attractions) page2Attractions.style.display = "none";
+            if (page2MainContent) page2MainContent.style.display = "none";
+            if (page3Attractions) page3Attractions.style.display = "none";
+            document.getElementById("page1-btn").classList.add("w3-black");
+        } else if (pageNum === 2) {
+            // 第2頁：顯示第2頁景點和旅遊介紹
+            if (page1Content) page1Content.style.display = "none";
+            if (page2Attractions) page2Attractions.style.display = "block";
+            if (page2MainContent) page2MainContent.style.display = "block";
+            if (page3Attractions) page3Attractions.style.display = "none";
+            document.getElementById("page2-btn").classList.add("w3-black");
+        } else if (pageNum === 3) {
+            // 第3頁：顯示中南部景點
+            if (page1Content) page1Content.style.display = "none";
+            if (page2Attractions) page2Attractions.style.display = "none";
+            if (page2MainContent) page2MainContent.style.display = "none";
+            if (page3Attractions) page3Attractions.style.display = "block";
+            document.getElementById("page3-btn").classList.add("w3-black");
+        }
+        
+        // 滾動到頁面頂部
+        window.scrollTo(0, 0);
+    }
+
+    function goToTop() {
+        // 回到頁面頂部
+        const pageTop = document.getElementById("pageTop");
+        if (pageTop) {
+            pageTop.scrollIntoView({ behavior: "smooth" });
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    }
+
+    function goToBottom() {
+        // 滾動到頁面底部
+        const pageBottom = document.getElementById("pageBottom");
+        if (pageBottom) {
+            pageBottom.scrollIntoView({ behavior: "smooth" });
+        } else {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        }
+    }
+</script>
+
+</body>
+</html>
