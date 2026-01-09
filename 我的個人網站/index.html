@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>期末個人網站</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #23272f 0%, #1a1d23 50%, #2d3139 100%);
+            color: #f8f9fa;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 215, 0, 0.01) 10px,
+                    rgba(255, 215, 0, 0.01) 20px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 215, 0, 0.01) 10px,
+                    rgba(255, 215, 0, 0.01) 20px
+                ),
+                radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(58, 63, 81, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 215, 0, 0.02) 0%, transparent 40%),
+                radial-gradient(circle at 60% 60%, rgba(58, 63, 81, 0.03) 0%, transparent 45%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.01) 2px,
+                    rgba(255, 255, 255, 0.01) 4px
+                );
+            pointer-events: none;
+            z-index: 0;
+        }
+        .navbar, footer {
+            background: #1a1d23 !important;
+            position: relative;
+            z-index: 1;
+        }
+        .navbar-brand, footer {
+            color: #f8f9fa !important;
+        }
+        header.bg-light {
+            background: linear-gradient(90deg, #3a3f51 0%, #23272f 100%);
+            color: #f8f9fa;
+            position: relative;
+            z-index: 1;
+        }
+        .card {
+            background: #2c3040;
+            border: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+            position: relative;
+            z-index: 1;
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
+        .card-title {
+            color: #ffd700;
+        }
+        .card-text {
+            color: #e0e0e0;
+        }
+        /* 讓主內容區（main）裡的卡片封面圖片保持一致尺寸 */
+        main .card-img-top {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .container {
+            max-width: 1100px;
+            position: relative;
+            z-index: 1;
+        }
+        .row.g-4 {
+            margin-top: 0;
+        }
+        section {
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .display-4 {
+                font-size: 2.2rem;
+            }
+            .card-img-top {
+                height: 140px;
+                object-fit: cover;
+            }
+            main .card-img-top {
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 導覽 -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">我的期末網站</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">作品集</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">關於我</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">聯絡</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-light py-5 text-center" id="home">
+        <div class="container">
+            <h1 class="display-4 mb-3">網頁設計課期末成果</h1>
+            <p class="lead mb-0">這裡統整了我這學期在網頁設計課所學到的內容</p>
+        </div>
+    </header>
+
+    <!-- BANNER 輪播 -->
+    <div id="carouselExample" class="carousel slide my-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="過程.png" class="d-block w-100" alt="Banner 1" style="max-height: 300px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="範例.png" class="d-block w-100" alt="Banner 2" style="max-height: 300px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="github.png" class="d-block w-100" alt="Banner 3" style="max-height: 300px; object-fit: cover;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- 個人資料介紹欄 -->
+    <section class="container my-4" id="about">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card mb-4" style="background: linear-gradient(135deg, #0f1117 0%, #1a1d23 100%); color:#ffd700; border-radius:1rem; box-shadow: 0 8px 32px rgba(255, 215, 0, 0.35), 0 4px 16px rgba(255, 215, 0, 0.2), 0 4px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05); border: 2px solid rgba(255, 215, 0, 0.4); position: relative; overflow: hidden;">
+                    <!-- 科技黑色網格紋理 -->
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: 
+                        linear-gradient(0deg, transparent 24%, rgba(255, 215, 0, 0.02) 25%, rgba(255, 215, 0, 0.02) 26%, transparent 27%, transparent 74%, rgba(255, 215, 0, 0.02) 75%, rgba(255, 215, 0, 0.02) 76%, transparent 77%, transparent),
+                        linear-gradient(90deg, transparent 24%, rgba(255, 215, 0, 0.02) 25%, rgba(255, 215, 0, 0.02) 26%, transparent 27%, transparent 74%, rgba(255, 215, 0, 0.02) 75%, rgba(255, 215, 0, 0.02) 76%, transparent 77%, transparent);
+                        background-size: 60px 60px;
+                        pointer-events: none;"></div>
+                    <!-- 邊緣科技線條 -->
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: 
+                        linear-gradient(90deg, rgba(30, 144, 255, 0.05) 1px, transparent 1px),
+                        linear-gradient(rgba(30, 144, 255, 0.05) 1px, transparent 1px);
+                        background-size: 1px 1px;
+                        pointer-events: none;"></div>
+                    <div class="card-body text-center" style="position: relative; z-index: 1;">
+                        <img src="個人照.png" class="rounded-circle mb-3" alt="個人頭像" style="width:120px; height:120px; object-fit:cover; border:4px solid #ffd700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);">
+                        <h3 class="mb-2" style="color:#ffd700;">黃榆傑</h3>
+                        <p class="mb-1" style="color:#e0e0e0;">北教大藝設系111415020</p>
+                        <p class="mb-2" style="color:#e0e0e0;">熱愛網頁設計、前端技術，喜歡學習新知識與挑戰自我。</p>
+                        <div>
+                            <span class="badge bg-warning text-dark mx-1">HTML</span>
+                            <span class="badge bg-warning text-dark mx-1">CSS</span>
+                            <span class="badge bg-warning text-dark mx-1">Bootstrap</span>
+                            <span class="badge bg-warning text-dark mx-1">artificial intelligence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <h2 class="text-center text-warning mb-5" style="font-size: 2rem;">我的網頁設計學習成果</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="HTML CSS.png" class="card-img-top" alt="HTML CSS">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML & CSS</h5>
+                        <p class="card-text">學會了HTML結構與CSS樣式設計，能夠製作基本的網頁版面。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="bootstrap.png" class="card-img-top" alt="Bootstrap">
+                    <div class="card-body">
+                        <h5 class="card-title">Bootstrap</h5>
+                        <p class="card-text">學習使用Bootstrap框架，快速建立響應式網頁和美觀的元件。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="AI-Banner.png" class="card-img-top" alt="JavaScript">
+                    <div class="card-body">
+                        <h5 class="card-title">artificial intelligence</h5>
+                        <p class="card-text">學習運用Ai加速工作的效率，並達到人機協作的目的來完成作業。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 作品展示區 -->
+    <section class="container my-5" id="portfolio">
+        <h2 class="text-center text-warning mb-5" style="font-size: 2rem;">我的作品集</h2>
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-100">
+                    <div style="position: relative;">
+                        <img src="golden.png" class="card-img-top" alt="作品1" style="height: 250px; object-fit: cover;">
+                        <span style="position: absolute; top: 10px; right: 10px; background: rgba(255, 215, 0, 0.9); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold;">9/23</span>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">作品一【初步嘗試】</h5>
+                        <p class="card-text">這是我製作的第一個作品，學會如何架網站並上傳然後加入自己的創意。</p>
+                        <a href="https://merry0w0.github.io/20250923/" class="btn btn-warning mt-auto">查看詳情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-100">
+                    <div style="position: relative;">
+                        <img src="1.png" class="card-img-top" alt="作品2" style="height: 250px; object-fit: cover;">
+                        <span style="position: absolute; top: 10px; right: 10px; background: rgba(255, 215, 0, 0.9); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold;">9/30</span>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">作品二 【唐詩創作】</h5>
+                        <p class="card-text">選擇自己喜歡的兩首唐詩，並設計表格放入唐詩的情境圖。</p>
+                        <a href="https://merry0w0.github.io/0930/" class="btn btn-warning mt-auto">查看詳情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-100">
+                    <div style="position: relative;">
+                        <img src="2.png" class="card-img-top" alt="作品3" style="height: 250px; object-fit: cover;">
+                        <span style="position: absolute; top: 10px; right: 10px; background: rgba(255, 215, 0, 0.9); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold;">10/7</span>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">作品三 【表格、圖片練習】</h5>
+                        <p class="card-text">表格和圖片的進階練習，設計讓人感到舒適的表格並放入適當的旅行相片。</p>
+                        <a href="https://merry0w0.github.io/20251007/" class="btn btn-warning mt-auto">查看詳情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-100">
+                    <div style="position: relative;">
+                        <img src="名片.png" class="card-img-top" alt="作品4" style="height: 250px; object-fit: cover;">
+                        <span style="position: absolute; top: 10px; right: 10px; background: rgba(255, 215, 0, 0.9); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold;">10/14</span>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">作品四【製作個人名片】</h5>
+                        <p class="card-text">展示的美感CSS設計與互動結合開發的綜合能力。</p>
+                        <a href="https://merry0w0.github.io/20251014/" class="btn btn-warning mt-auto">查看詳情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-100">
+                    <div style="position: relative;">
+                        <img src="map.png" class="card-img-top" alt="作品5" style="height: 250px; object-fit: cover;">
+                        <span style="position: absolute; top: 10px; right: 10px; background: rgba(255, 215, 0, 0.9); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold;">10/21</span>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">作品五 【地圖導航結合GOOGLE MAP】</h5>
+                        <p class="card-text">地圖導航功能，結合地理資訊與互動式的界面。</p>
+                        <a href="https://merry0w0.github.io/1021/" class="btn btn-warning mt-auto">查看詳情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-100">
+                    <div style="position: relative;">
+                        <img src="101.png" class="card-img-top" alt="作品6" style="height: 250px; object-fit: cover;">
+                        <span style="position: absolute; top: 10px; right: 10px; background: rgba(255, 215, 0, 0.9); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold;">期中網站</span>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">作品六【期中網站自訂主題】</h5>
+                        <p class="card-text"> 台灣景點介紹與推薦 旅遊網站懶人包統整</p>
+                        <a href="https://merry0w0.github.io/midterm%20exam/" class="btn btn-warning mt-auto">查看詳情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-100">
+                    <div style="position: relative;">
+                        <img src="Skyscrapers.png" class="card-img-top" alt="作品7" style="height: 250px; object-fit: cover;">
+                        <span style="position: absolute; top: 10px; right: 10px; background: rgba(255, 215, 0, 0.9); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold;">11/11</span>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">作品七【世界六國介紹】</h5>
+                        <p class="card-text">進階專題作品展示綜合運用多項技術的能力，包含bootstrap、SS3及HTML5 語義化標籤等。</p>
+                       <a href="https://merry0w0.github.io/20251111/" class="btn btn-warning mt-auto">查看詳情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-100">
+                    <div style="position: relative;">
+                        <img src="8.png" class="card-img-top" alt="作品8" style="height: 250px; object-fit: cover;">
+                        <span style="position: absolute; top: 10px; right: 10px; background: rgba(255, 215, 0, 0.9); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold;">11/18</span>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">作品八 【114教學科技應用設計競賽 一頁式網站】</h5>
+                        <p class="card-text"><span style="color:#ffffff;">以Bootstrap為核心，運用創意將「114教學科技應用設計競賽實施辦法」的內容設計為「一頁式網站」</span></p>
+                        <a href="https://merry0w0.github.io/1118/" class="btn btn-warning mt-auto">查看詳情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-100">
+                    <div style="position: relative;">
+                        <img src="設計2.png" class="card-img-top" alt="作品9" style="height: 250px; object-fit: cover;">
+                        <span style="position: absolute; top: 10px; right: 10px; background: rgba(255, 215, 0, 0.9); color: #000; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold;">總結</span>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">作品九【內有驚喜】</h5>
+                        <p class="card-text">最終專題成果展示，融合所有學習重點的心得感想。</p>
+                        <a href="https://merry0w0.github.io/20260109/" class="btn btn-warning mt-auto">查看詳情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white text-center py-3" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-2 mb-md-0 text-center">
+                    <h6 class="text-warning">聯絡方式</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li>Email: <a href="mailto:s111415020@stu.ntue.edu.tw" class="text-white">s111415020@stu.ntue.edu.tw</a></li>
+                        <li>電話: 0912-345678</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h6 class="text-warning">網站資訊</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li>設計者：黃榆傑</li>
+                        <li>版權所有 &copy; 2025</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
