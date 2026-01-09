@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>學期心得感言 - 跑馬燈</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        /* 固定標題 */
+        .page-title {
+            position: fixed;
+            top: 10%;
+            font-size: 2.5rem;
+            color: #ffd700;
+            letter-spacing: 10px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            z-index: 10;
+        }
+
+        /* 跑馬燈容器 */
+        .marquee-container {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* 跑馬燈文字動畫 */
+        .marquee-text {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            padding-left: 100%;
+            animation: scroll-text 40s linear infinite;
+        }
+
+        /* 動畫暫停類別 */
+        .paused {
+            animation-play-state: paused !important;
+        }
+
+        @keyframes scroll-text {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* 暫停圖示提示 */
+        #status-icon {
+            position: fixed;
+            bottom: 15%;
+            font-size: 1rem;
+            color: #555;
+            transition: 0.3s;
+        }
+
+        .back-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-title">期末心得感想</div>
+
+    <div class="marquee-container" id="container">
+        <div class="marquee-text" id="content">
+            這學期的網頁設計課讓我從一個「網頁瀏覽者」轉變為「創作者」。 &nbsp;&nbsp;&nbsp;&nbsp;
+            在最初的「黃金主題網頁」開發過程中，我學會了如何透過 CSS 精細調整視覺質感，讓原本生硬的背景在加入放射漸層與毛玻璃效果 rgba 後，展現出了設計的深度，這讓我體會到前端工程師在美學與代碼間的平衡點。 &nbsp;&nbsp;&nbsp;&nbsp;
+            而在我「六國旅遊導覽網」的實作中，我接觸到了業界主流的 Bootstrap 5 框架，我學會了如何不再糾結於瑣碎的佈局細節，而是利用網格系統快速建構出穩定且專業的頁面，特別是在解決「圖片裁切不一」與「手機版跑版」的問題時，我掌握了 object-fit 與媒體查詢的技術，這讓我寫出的程式碼更具彈性。 &nbsp;&nbsp;&nbsp;&nbsp;
+            最深刻的體悟是，一個好的網頁不只是「好看」，更要「好操作」。當我成功將兩個獨立的檔案連結在一起，完成一個具備首頁與分頁的網站雛型時，我感受到了建構數位空間的成就感。
+        </div>
+    </div>
+
+    <div id="status-icon">按下 [空白鍵] 暫停 / 播放</div>
+
+    <a href="javascript:history.back()" class="back-btn">返回主頁</a>
+
+    <script>
+        const content = document.getElementById('content');
+        const statusIcon = document.getElementById('status-icon');
+        let isPaused = false;
+
+        function togglePause() {
+            isPaused = !isPaused;
+            if (isPaused) {
+                content.classList.add('paused');
+                statusIcon.innerHTML = "⏸ 已暫停 (按下空白鍵繼續)";
+                statusIcon.style.color = "#ffd700";
+            } else {
+                content.classList.remove('paused');
+                statusIcon.innerHTML = "▶ 播放中 (按下空白鍵暫停)";
+                statusIcon.style.color = "#555";
+            }
+        }
+
+        // 監聽空白鍵
+        window.addEventListener('keydown', function(e) {
+            if (e.code === 'Space') {
+                e.preventDefault(); // 防止網頁捲動
+                togglePause();
+            }
+        });
+
+        // 點擊螢幕也可以暫停
+        document.getElementById('container').addEventListener('click', togglePause);
+    </script>
+</body>
+</html>
